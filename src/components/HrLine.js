@@ -1,21 +1,33 @@
-import React from 'react';
-import { View } from 'react-native';
-import PropTypes from 'prop-types';
-import {AppContext} from './ContextProvider';
+import React from "react";
+import { View } from "react-native";
+import PropTypes from "prop-types";
+import { AppContext } from "./ContextProvider";
 
-const HrLine = ({color, width}) =>
+const HrLine = ({ color, width, hour }) => (
   <AppContext.Consumer>
-    {(context) =>
+    {(context) => (
       <View
         style={{
-          width: '100%',
+          width: "100%",
           paddingTop: context.hour_size - width,
           borderBottomColor: color,
           borderBottomWidth: width,
         }}
-      />
-    }
+      >
+        <TouchableOpacity
+          onPress={() => onEventPress(hour)}
+          style={{
+            margin: 0,
+            padding: 0,
+            flex: 1,
+            width: `100%`,
+            height: `100%`,
+          }}
+        />
+      </View>
+    )}
   </AppContext.Consumer>
+);
 
 HrLine.propTypes = {
   color: PropTypes.string,
@@ -23,7 +35,7 @@ HrLine.propTypes = {
 };
 
 HrLine.defaultProps = {
-  color: '#BABABA',
+  color: "#BABABA",
   width: 1,
 };
 
