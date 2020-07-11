@@ -3,24 +3,22 @@ import { View, TouchableOpacity, Text } from "react-native";
 import PropTypes from "prop-types";
 import { AppContext } from "./ContextProvider";
 
-const HrLine = ({ color, width, hour, onGridPress }) => (
+const HrLine = ({ color, width, slot, onGridPress }) => (
   <AppContext.Consumer>
     {(context) => (
       <TouchableOpacity
-        onPress={() => onGridPress(hour)}
+        onPress={() => onGridPress(slot)}
         style={{
           margin: 0,
           padding: 0,
           flex: 1,
           width: `100%`,
           height: context.hour_size,
-          backgroundColor: `black`,
+          backgroundColor: `white`,
           borderBottomColor: color,
           borderBottomWidth: width,
         }}
-      >
-        <Text>Hi</Text>
-      </TouchableOpacity>
+      ></TouchableOpacity>
     )}
   </AppContext.Consumer>
 );
