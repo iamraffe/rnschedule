@@ -6,29 +6,21 @@ import { AppContext } from "./ContextProvider";
 const HrLine = ({ color, width, hour, onGridPress }) => (
   <AppContext.Consumer>
     {(context) => (
-      <View
+      <TouchableOpacity
+        onPress={() => onGridPress(hour)}
         style={{
-          width: "100%",
-          height: `100%`,
-          paddingTop: context.hour_size - width,
+          margin: 0,
+          padding: 0,
+          flex: 1,
+          width: `100%`,
+          height: context.hour_size,
+          backgroundColor: `black`,
           borderBottomColor: color,
           borderBottomWidth: width,
         }}
       >
-        <TouchableOpacity
-          onPress={() => onGridPress(hour)}
-          style={{
-            margin: 0,
-            padding: 0,
-            flex: 1,
-            width: `100%`,
-            height: `100%`,
-            backgroundColor: `red`,
-          }}
-        >
-          <Text>Hi</Text>
-        </TouchableOpacity>
-      </View>
+        <Text>Hi</Text>
+      </TouchableOpacity>
     )}
   </AppContext.Consumer>
 );
