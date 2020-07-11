@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity, Text } from "react-native";
 import PropTypes from "prop-types";
 import { AppContext } from "./ContextProvider";
 
@@ -24,7 +24,9 @@ const HrLine = ({ color, width, hour, onGridPress }) => (
             height: `100%`,
             backgroundColor: `red`,
           }}
-        />
+        >
+          <Text>Hi</Text>
+        </TouchableOpacity>
       </View>
     )}
   </AppContext.Consumer>
