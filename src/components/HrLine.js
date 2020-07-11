@@ -9,6 +9,7 @@ const HrLine = ({ color, width, hour, onGridPress }) => (
       <View
         style={{
           width: "100%",
+          height: `100%`,
           paddingTop: context.hour_size - width,
           borderBottomColor: color,
           borderBottomWidth: width,
