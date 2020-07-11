@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import PropTypes from "prop-types";
 import { AppContext } from "./ContextProvider";
 
