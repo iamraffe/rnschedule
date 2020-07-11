@@ -29,14 +29,23 @@ const Header = ({ header_color, left_icon, accent, status_bar }) => {
             ]}
           >
             <View style={styles.text_row}>
-              {left_icon}
               <TouchableOpacity
                 style={styles.center}
-                onPress={() => context.toggleDatePicker()}
+                onPress={() => context.setDate(new Date(2020, 7 - 1, 10))}
               >
+                <Text style={[styles.month, { color: text_color }]}>Prev</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.center}>
                 <Text style={[styles.month, { color: text_color }]}>
                   {moment(context.date).format("dddd")}
                 </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.center}
+                onPress={() => context.setDate(new Date(2020, 7 - 1, 12))}
+              >
+                <Text style={[styles.month, { color: text_color }]}>Prev</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.img}
