@@ -30,22 +30,47 @@ const Header = ({ header_color, left_icon, accent, status_bar }) => {
           >
             <View style={styles.text_row}>
               <TouchableOpacity
-                style={styles.center}
-                onPress={() => context.setDate(new Date(2020, 7 - 1, 10))}
+                style={styles.day_box}
+                onPress={() => {
+                  let yesterday = moment(context.date).subtract(1, "day");
+                  context.setDate(
+                    new Date(
+                      yesterday.year(),
+                      yesterday.month(),
+                      yesterday.day()
+                    )
+                  );
+                }}
               >
-                <Text style={[styles.month, { color: text_color }]}>Prev</Text>
+                <View
+                  style={[styles.circle, { backgroundColor: accent_color }]}
+                >
+                  <Text style={[styles.day, { color: accent_text_color }]}>
+                    {moment(context.date).format("ddd")}
+                  </Text>
+                </View>
               </TouchableOpacity>
-
               <TouchableOpacity style={styles.center}>
                 <Text style={[styles.month, { color: text_color }]}>
                   {moment(context.date).format("dddd")}
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={styles.center}
-                onPress={() => context.setDate(new Date(2020, 7 - 1, 12))}
+                style={styles.day_box}
+                onPress={() => {
+                  let tomorrow = moment(context.date).add(1, "day");
+                  context.setDate(
+                    new Date(tomorrow.year(), tomorrow.month(), tomorrow.day())
+                  );
+                }}
               >
-                <Text style={[styles.month, { color: text_color }]}>Prev</Text>
+                <View
+                  style={[styles.circle, { backgroundColor: accent_color }]}
+                >
+                  <Text style={[styles.day, { color: accent_text_color }]}>
+                    {moment(context.date).format("ddd")}
+                  </Text>
+                </View>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.img}
