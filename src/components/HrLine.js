@@ -1,6 +1,7 @@
 import React from "react";
 import { View, TouchableOpacity, Text } from "react-native";
 import PropTypes from "prop-types";
+import moment from "moment";
 import { AppContext } from "./ContextProvider";
 
 const HrLine = ({ color, width, slot, onGridPress }) => (
