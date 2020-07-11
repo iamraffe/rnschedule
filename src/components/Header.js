@@ -37,7 +37,7 @@ const Header = ({ header_color, left_icon, accent, status_bar }) => {
                     new Date(
                       yesterday.year(),
                       yesterday.month(),
-                      yesterday.day()
+                      yesterday.date()
                     )
                   );
                 }}
@@ -46,7 +46,10 @@ const Header = ({ header_color, left_icon, accent, status_bar }) => {
                   style={[styles.circle, { backgroundColor: accent_color }]}
                 >
                   <Text style={[styles.day, { color: accent_text_color }]}>
-                    {moment(context.date).format("ddd")}
+                    {moment(context.date)
+                      .subtract(1, "day")
+                      .format("ddd")
+                      .substr(0, 2)}
                   </Text>
                 </View>
               </TouchableOpacity>
@@ -60,7 +63,7 @@ const Header = ({ header_color, left_icon, accent, status_bar }) => {
                 onPress={() => {
                   let tomorrow = moment(context.date).add(1, "day");
                   context.setDate(
-                    new Date(tomorrow.year(), tomorrow.month(), tomorrow.day())
+                    new Date(tomorrow.year(), tomorrow.month(), tomorrow.date())
                   );
                 }}
               >
@@ -68,7 +71,10 @@ const Header = ({ header_color, left_icon, accent, status_bar }) => {
                   style={[styles.circle, { backgroundColor: accent_color }]}
                 >
                   <Text style={[styles.day, { color: accent_text_color }]}>
-                    {moment(context.date).format("ddd")}
+                    {moment(context.date)
+                      .add(1, "day")
+                      .format("ddd")
+                      .substr(0, 2)}
                   </Text>
                 </View>
               </TouchableOpacity>
