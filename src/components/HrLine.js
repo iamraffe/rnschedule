@@ -22,6 +22,7 @@ const HrLine = ({ color, width, hour, onGridPress }) => (
             flex: 1,
             width: `100%`,
             height: `100%`,
+            backgroundColor: `red`,
           }}
         />
       </View>
