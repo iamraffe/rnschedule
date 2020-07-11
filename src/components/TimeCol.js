@@ -20,7 +20,7 @@ const TimeCol = ({ hour_size, timeArr }) => (
 
 let styles = StyleSheet.create({
   box: {
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
   },
   textStyle: {
