@@ -48,7 +48,6 @@ const RNSchedule = ({
             </View>
             <View style={styles.schedule_col}>
               <DrawnGrid onGridPress={onGridPress} />
-              <NowBar hour_size={hourSize} />
               {!!data && (
                 <ScheduledData dataArray={data} onEventPress={onEventPress} />
               )}
