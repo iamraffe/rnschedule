@@ -18,7 +18,6 @@ const procRows = (inputData) => {
         rowAppts: [appt],
       });
     }
-    // console.log('output data', outputData)
   });
 
   return outputData;
