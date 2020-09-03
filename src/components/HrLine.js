@@ -19,7 +19,7 @@ const HrLine = ({ color, width, slot, onGridPress }) => (
           // height: context.hour_size,
           height: 1000,
           backgroundColor: `blue`,
-          borderBottomColor: color,
+          borderBottomColor: "red",
           borderBottomWidth: width,
         }}
       >
