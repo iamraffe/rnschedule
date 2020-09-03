@@ -8,14 +8,16 @@ const HrLine = ({ color, width, slot, onGridPress }) => (
   <AppContext.Consumer>
     {(context) => (
       <TouchableOpacity
-        onPress={() => onGridPress(slot, moment(context.date).format(`dddd`))}
+        onPress={() => {
+          onGridPress(slot, moment(context.date).format(`dddd`));
+        }}
         style={{
           margin: 0,
           padding: 0,
           flex: 1,
           width: `100%`,
           height: context.hour_size,
-          backgroundColor: `white`,
+          backgroundColor: `blue`,
           borderBottomColor: color,
           borderBottomWidth: width,
         }}
