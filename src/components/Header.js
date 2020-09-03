@@ -10,7 +10,7 @@ const Header = ({ header_color, left_icon, accent, status_bar }) => {
   var text_color = color1.isDark() ? "#fff" : "#000";
   var accent_color = tinycolor(accent);
   var accent_text_color = accent_color.isDark() ? "#fff" : "#000";
-  const marginTop = status_bar && Platform.OS == "ios" ? 20 : 0;
+  const marginTop = status_bar && Platform.OS == "ios" ? 0 : 0;
   var icon = color1.isDark()
     ? require("../icons/calendar_today_white.png")
     : require("../icons/calendar_today_black.png");
