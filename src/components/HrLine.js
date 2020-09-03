@@ -21,7 +21,9 @@ const HrLine = ({ color, width, slot, onGridPress }) => (
           borderBottomColor: color,
           borderBottomWidth: width,
         }}
-      ></TouchableOpacity>
+      >
+        <Text>{context.hour_size}</Text>
+      </TouchableOpacity>
     )}
   </AppContext.Consumer>
 );
