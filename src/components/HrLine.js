@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity, Text } from "react-native";
+import { View, TouchableOpacity, Text, Platform } from "react-native";
 import PropTypes from "prop-types";
 import moment from "moment";
 import { AppContext } from "./ContextProvider";
@@ -18,7 +18,7 @@ const HrLine = ({ color, width, slot, onGridPress }) => (
           backgroundColor: `white`,
           borderBottomColor: color,
           borderBottomWidth: width,
-          zIndex: 1,
+          zIndex: Platform.OS === "ios" ? 1 : undefined,
         }}
       />
     )}

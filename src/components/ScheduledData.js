@@ -9,7 +9,14 @@ const ScheduledData = ({ dataArray, onEventPress }) => (
     {(context) => {
       const data = todayData(dataArray, context.date);
       return (
-        <View style={{ width: "100%", zIndex: 1, position: "absolute" }}>
+        <View
+          style={{
+            width: "100%",
+            zIndex: Platform.OS === "ios" ? 1 : undefined,
+            height: Platform.OS === "ios" ? undefined : "100%",
+            position: "absolute",
+          }}
+        >
           {data.map((row, i) => (
             <RowView
               key={i}
